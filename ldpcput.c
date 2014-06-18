@@ -72,24 +72,23 @@ int main(){
 	int line = (N-K)/J;
 	int ldpc[N-K][N] = {0};
 	
-	srand((unsigned)time(NULL));
+//	srand((unsigned)time(NULL));
 
-	for(k=0;k<J;k++){
-	for(i=0;i<line;i++){
-		for(j=0;j<K;j++){
-			ldpc[k*line+i][i*K+j]=1;
+	for(i=0;i<N-K;i++){
+		for(j=0;j<N;j++){
+			scanf("%d",&ldpc[i][j]);
 		}
 	}
-	}
 
-	for(i=1;i<J;i++){
-		randomswap(ldpc,i*line,line);
-	}
+//	for(i=1;i<J;i++){
+//		randomswap(ldpc,i*line,line);
+//	}
 
 //	printldpc(ldpc);
 	printheader();
 	printglaph(ldpc);
 	printfooter();
+
 
 	return 0;
 }
